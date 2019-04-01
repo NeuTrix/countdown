@@ -18,6 +18,7 @@ export default class HomeScreen extends React.Component {
   };
 
   render() {
+    
     return (
       <View style={styles.container}>
         <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
@@ -40,9 +41,8 @@ export default class HomeScreen extends React.Component {
             <View style={[styles.codeHighlightContainer, styles.homeScreenFilename]}>
               <MonoText style={styles.codeHighlightText}>screens/HomeScreen.js</MonoText>
             </View>
-
             <Text style={styles.getStartedText}>
-              Change this text and your app will automatically reload.
+               Tricky to start on phone. Make sure Chrome is not the default browser!
             </Text>
           </View>
 
