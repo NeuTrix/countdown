@@ -61,8 +61,7 @@ const styles = StyleSheet.create({
 const propTypes = {
   event: PropTypes.shape({
     title: PropTypes.string.isRequired,
-    date: PropTypes.string,
-    // date: PropTypes.instacnceOf(Date)
+    date: PropTypes.instanceOf(Date)
   }),
 }
 
