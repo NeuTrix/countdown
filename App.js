@@ -22,7 +22,10 @@ const styles = StyleSheet.create({
 const appNavigator= createStackNavigator({
   list: {
     screen: EventList,
-  }
+    navigationOptions: () => ({
+      title: "Working?"
+    })
+  },
 })
 
 export default createAppContainer(appNavigator)
