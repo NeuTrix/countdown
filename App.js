@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { AppLoading, Asset, Font, Icon } from 'expo';
 // import AppNavigator from './navigation/AppNavigator';
 import EventList from './components/EventList';
+// import EventForm from './components/EventForm';
 import {Text} from 'react-native';
 import { createStackNavigator, createAppContainer } from 'react-navigation';
 import {
@@ -19,13 +20,19 @@ const styles = StyleSheet.create({
   },
 });
 
-const appNavigator= createStackNavigator({
+const appNavigator = createStackNavigator({
   list: {
     screen: EventList,
     navigationOptions: () => ({
-      title: "Working?"
+      title: "Your Events"
     })
-  },
+  }
+  // form: {
+  //   screen: EventList,
+  //   navigationOptions: () => ({
+  //     title: "Add a New Event"
+  //   })
+  // },
 })
 
 export default createAppContainer(appNavigator)

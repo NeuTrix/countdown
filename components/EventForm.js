@@ -11,7 +11,6 @@ class EventForm extends Component {
     return (
       <View>
         <TouchableHighlight onPress={this.handleAddPress} >
-        <TouchableHighlight >
           <Text>Add</Text>
         </TouchableHighlight>
       </View>
