@@ -28,7 +28,7 @@ class EventList extends Component {
           timer: Date.now(),
         })),
       });
-    }, 3000);
+    }, 1000);
 
     const events = require('../db.json').events.map(e => ({
       ...e,

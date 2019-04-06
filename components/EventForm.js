@@ -3,14 +3,15 @@ import { View, Text, TouchableHighlight} from 'react-native'
 
 class EventForm extends Component {
   
-  handleAddPress() {
+  handleAddPress = () => {
 
   }
-  
+
   render() {
     return (
       <View>
         <TouchableHighlight onPress={this.handleAddPress} >
+        <TouchableHighlight >
           <Text>Add</Text>
         </TouchableHighlight>
       </View>
