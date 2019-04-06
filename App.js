@@ -2,16 +2,17 @@ import React, { Component } from 'react';
 import { AppLoading, Asset, Font, Icon } from 'expo';
 // import AppNavigator from './navigation/AppNavigator';
 import EventList from './components/EventList';
-// import EventForm from './components/EventForm';
+import EventForm from './components/EventForm';
 import {Text} from 'react-native';
 import { createStackNavigator, createAppContainer } from 'react-navigation';
-import {
-  Platform,
-  StatusBar,
-  StyleSheet,
-  View
-}
-from 'react-native';
+import { Platform, StatusBar, StyleSheet, View } from 'react-native';
+
+import { YellowBox } from 'react-native';
+
+YellowBox.ignoreWarnings([
+  'Warning: componentWillMount is deprecated',
+  'Warning: componentWillReceiveProps is deprecated',
+]);
 
 const styles = StyleSheet.create({
   container: {
@@ -26,13 +27,13 @@ const appNavigator = createStackNavigator({
     navigationOptions: () => ({
       title: "Your Events"
     })
-  }
-  // form: {
-  //   screen: EventList,
-  //   navigationOptions: () => ({
-  //     title: "Add a New Event"
-  //   })
-  // },
+  },
+  form: {
+    screen: EventForm,
+    navigationOptions: () => ({
+      title: "Add a New Event"
+    })
+  },
 })
 
 export default createAppContainer(appNavigator)
