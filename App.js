@@ -36,4 +36,10 @@ const appNavigator = createStackNavigator({
   },
 })
 
-export default createAppContainer(appNavigator)
+const AppContainer = createAppContainer(appNavigator)
+
+export default class App extends Component {
+  render() {
+    return <AppContainer/> ;
+  }
+}

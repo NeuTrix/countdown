@@ -29,6 +29,11 @@ class EventList extends Component {
       });
     }, 1000);
 
+    handleAddEvent = () => {
+      const { navigation } = this.props;
+      navigation.navigate('form');
+    }
+
     const events = require('../db.json').events.map(e => ({
       ...e,
       date: new Date(e.date),
@@ -52,7 +57,7 @@ class EventList extends Component {
       <ActionButton  
         key="fab"
         onPress={this.handleAddEvent} 
-        buttonColor="rgba(231, 76, 60, 61)"
+        buttonColor="rgba(231, 76, 60, 1)" // a typical red color
       />
     ];
   }
