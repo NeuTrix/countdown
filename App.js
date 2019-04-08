@@ -21,20 +21,25 @@ const styles = StyleSheet.create({
   },
 });
 
-const appNavigator = createStackNavigator({
-  list: {
-    screen: EventList,
-    navigationOptions: () => ({
-      title: "Your Events"
-    })
+const appNavigator = createStackNavigator(
+  {
+    list: {
+      screen: EventList,
+      navigationOptions: () => ({
+        title: "Your Events"
+      })
+    },
+    form: {
+      screen: EventForm,
+      navigationOptions: () => ({
+        title: "Add a New Event"
+      })
+    }
   },
-  form: {
-    screen: EventForm,
-    navigationOptions: () => ({
-      title: "Add a New Event"
-    })
-  },
-})
+  { 
+    initialRouteName: 'list', 
+  }
+)
 
 const AppContainer = createAppContainer(appNavigator)
 
