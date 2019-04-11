@@ -26,7 +26,6 @@ class EventForm extends Component {
     this.setState({ title: value });
   }
 
-
   render() {
     return (
       <View style={{ flex: 1 }} >
@@ -38,6 +37,9 @@ class EventForm extends Component {
             spellCheck={false} 
             onChangeText={(value) => this.handleChangeTitle(value)}
             value={this.state.title}
+          />
+          <TextInput
+            style={[styles.text, styles.borderTop]}
           />
         </View>
         <TouchableHighlight 
@@ -52,6 +54,10 @@ class EventForm extends Component {
 }
 
 const styles = StyleSheet.create({
+  borderTop: {
+    borderColor: 'grey',
+    borderTopWidth: 1, 
+  },
   button: {
     alignItems: 'center',
     alignSelf: 'stretch',
@@ -61,17 +67,26 @@ const styles = StyleSheet.create({
     borderWidth: 1, 
     height: 40,
     justifyContent: 'center',
-    marginTop: 20,
-    marginBottom: 20,
-  },
-  fieldContainer: {
-    marginTop: 20,
-    marginBottom: 20,
-    backgroundColor: 'whitesmoke', 
+    margin: 10,
   },
   buttonText: {
     color: 'white',
     fontSize: 20,
+    marginTop: 10,
+    marginBottom: 10,
+  },
+  fieldContainer: {
+    backgroundColor: 'whitesmoke', 
+    padding: 10,
+  },
+  text: {
+    borderColor: 'orangered',
+    borderRadius: 5,
+    borderWidth: 1,
+    height: 50,
+    marginTop: 10,
+    marginBottom: 10,
+    padding: 10,
   }
 })
 
