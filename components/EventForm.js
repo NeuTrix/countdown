@@ -5,7 +5,7 @@ import { Button,
   TextInput, 
   TouchableHighlight, 
   View,
-} from 'react-native'
+import DateTimePicker from 'react-native-modal-datetime-picker';
 
 class EventForm extends Component {
   constructor(props) {
