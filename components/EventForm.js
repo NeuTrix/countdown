@@ -5,7 +5,9 @@ import { Button,
   TextInput, 
   TouchableHighlight, 
   View,
+} from 'react-native';
 import DateTimePicker from 'react-native-modal-datetime-picker';
+import formatDateTime from './api';
 
 class EventForm extends Component {
   constructor(props) {
@@ -38,24 +40,40 @@ class EventForm extends Component {
             value={this.state.title}
           />
         </View>
-        <Button title="Add Me" onPress={this.handleAddPress}/>
+        <TouchableHighlight 
+          style={styles.button}
+          onPress={this.handleAddPress}
+        >
+          <Text style={styles.buttonText}>Add Events</Text>
+        </TouchableHighlight>
       </View>
     )
   }
 }
 
 const styles = StyleSheet.create({
+  button: {
+    alignItems: 'center',
+    alignSelf: 'stretch',
+    backgroundColor: 'orange',
+    borderColor: 'orangered',
+    borderRadius: 5,
+    borderWidth: 1, 
+    height: 40,
+    justifyContent: 'center',
+    marginTop: 20,
+    marginBottom: 20,
+  },
   fieldContainer: {
     marginTop: 20,
     marginBottom: 20,
     backgroundColor: 'whitesmoke', 
   },
-  text: {
-    color: 'red',
-    height: 40,
-    marginTop: 20,
-    marginBottom: 20,
+  buttonText: {
+    color: 'white',
+    fontSize: 20,
   }
 })
 
 export default EventForm
+

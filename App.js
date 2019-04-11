@@ -37,7 +37,7 @@ const appNavigator = createStackNavigator(
     }
   },
   { 
-    initialRouteName: 'list', 
+    initialRouteName: 'form', 
   }
 )
 
