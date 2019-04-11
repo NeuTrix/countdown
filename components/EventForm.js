@@ -30,9 +30,17 @@ class EventForm extends Component {
     this.setState({ title: value });
   }
 
-  handleDatePress() {
-    // Alert.alert('working')
+  handleDatePress = () => {
     this.setState({ showDatePicker: true });
+  }
+
+  handleDatePicked = (date) => {
+    this.setState({ date });
+    this.handleHideDatePicker();
+  }
+
+  handleHideDatePicker = () => {
+    this.setState({ showDatePicker: false  });
   }
 
   render() {
@@ -53,13 +61,16 @@ class EventForm extends Component {
             spellCheck={false}
             value={formatDateTime(this.state.date.toString())}
             editable={!this.state.showDatePicker}
-            onFocus={() => this.handleDatePress()}
+            onFocus={this.handleDatePress}
           />
 
           <DateTimePicker
             isVisible={this.state.showDatePicker}
+            mode='date'
+            onCancel={this.handleHideDatePicker}
+            onConfirm={this.handleDatePicked}
           />
-          
+
           <Text>Title: {this.state.title}</Text> 
           <Text>PickerStatus: {this.state.showDatePicker.toString()}</Text> 
         </View>
