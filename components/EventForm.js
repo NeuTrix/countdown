@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
-import { Button,
+import { 
+  Alert,
+  Button,
   StyleSheet,
   Text, 
   TextInput, 
@@ -24,12 +26,13 @@ class EventForm extends Component {
     this.props.navigation.navigate('list')
   }
 
-  handleDatePress() {
-      this.setState({ showDatePicker: true });
-  }
-
   handleChangeTitle( value ) {
     this.setState({ title: value });
+  }
+
+  handleDatePress() {
+    // Alert.alert('working')
+    this.setState({ showDatePicker: true });
   }
 
   render() {
@@ -50,15 +53,24 @@ class EventForm extends Component {
             spellCheck={false}
             value={formatDateTime(this.state.date.toString())}
             editable={!this.state.showDatePicker}
-            onFocus={this.handleDatePress}
+            onFocus={() => this.handleDatePress()}
           />
+
+          <DateTimePicker
+            isVisible={this.state.showDatePicker}
+          />
+          
+          <Text>Title: {this.state.title}</Text> 
+          <Text>PickerStatus: {this.state.showDatePicker.toString()}</Text> 
         </View>
+
         <TouchableHighlight 
           style={styles.button}
           onPress={this.handleAddPress}
         >
           <Text style={styles.buttonText}>Add Events</Text>
         </TouchableHighlight>
+
       </View>
     )
   }

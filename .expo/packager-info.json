@@ -2,9 +2,9 @@
   "devToolsPort": 19003,
   "expoServerPort": 19000,
   "packagerPort": 19001,
-  "packagerPid": 4870,
+  "packagerPid": 6341,
   "expoServerNgrokUrl": "https://av-reg.anonymous.countdown.exp.direct",
   "packagerNgrokUrl": "https://packager.av-reg.anonymous.countdown.exp.direct",
-  "ngrokPid": 4895,
+  "ngrokPid": 6357,
   "webpackServerPort": null
 }
