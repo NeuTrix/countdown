@@ -1,5 +1,11 @@
 import React, { Component } from 'react'
-import { View, StyleSheet, Text, TextInput, TouchableHighlight} from 'react-native'
+import { Button,
+  StyleSheet,
+  Text, 
+  TextInput, 
+  TouchableHighlight, 
+  View,
+} from 'react-native'
 
 class EventForm extends Component {
   constructor(props) {
@@ -10,6 +16,7 @@ class EventForm extends Component {
   }
   
   handleAddPress = () => {
+    console.log(10, '==>', this.state);
     this.props.navigation.navigate('list')
   }
 
@@ -31,9 +38,7 @@ class EventForm extends Component {
             value={this.state.title}
           />
         </View>
-        <TouchableHighlight onPress={this.handleAddPress} >
-          <Text>{this.state.title}</Text>
-        </TouchableHighlight>
+        <Button title="Add Me" onPress={this.handleAddPress}/>
       </View>
     )
   }
