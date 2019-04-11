@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, Text, TouchableHighlight} from 'react-native'
+import { View, StyleSheet, Text, TextInput, TouchableHighlight} from 'react-native'
 
 class EventForm extends Component {
   
@@ -9,7 +9,11 @@ class EventForm extends Component {
 
   render() {
     return (
-      <View>
+      <View style={{ flex: 1 }} >
+        {/* <View > */}
+        <View style={styles.fieldContainer} >
+          <Text style={{  color: 'white' }}> Test </Text>
+        </View>
         <TouchableHighlight onPress={this.handleAddPress} >
           <Text>Add</Text>
         </TouchableHighlight>
@@ -17,5 +21,14 @@ class EventForm extends Component {
     )
   }
 }
+
+const styles = StyleSheet.create({
+  fieldContainer: {
+    marginTop: 20,
+    marginBottom: 20,
+    backgroundColor: 'orangered', 
+    color: 'white',
+  }
+})
 
 export default EventForm
